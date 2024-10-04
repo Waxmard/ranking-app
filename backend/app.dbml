@@ -1,0 +1,30 @@
+Table users {
+  id int [pk, increment]  // Primary key, auto-incremented
+  email varchar [not null, unique] // User's email, unique to each user
+  username varchar [not null, unique] // User's display name
+  oauth_provider varchar [not null] // The OAuth provider (Google, Facebook, etc.)
+  oauth_id varchar [not null, unique] // Unique identifier from OAuth provider
+  created_at timestamp [default: `now()`] // Timestamp for user creation
+  updated_at timestamp [default: `now()`] // Timestamp for last update
+}
+
+Table lists {
+  id int [pk, increment]
+  user_id int [ref: > users.id] // Foreign key to users table
+  name varchar [not null] // The name of the list
+  type varchar [not null] // The type of the list (e.g., restaurant, hotel, etc.)
+  is_public bool [default: false] // Whether the list is public or private
+  created_at timestamp [default: `now()`]
+  updated_at timestamp [default: `now()`]
+  deleted_at timestamp // Nullable, records when the list was deleted (soft deletions)
+}
+
+Table items {
+  id int [pk, increment]
+  list_id int [ref: > lists.id] // Foreign key to the lists table
+  name varchar [not null] // The name of the item
+  description text // Optional: Description or notes about the item
+  ranking float [default: null] // Ranking of the item (0.0 to 10.0)
+  created_at timestamp [default: `now()`]
+  updated_at timestamp [default: `now()`]
+}

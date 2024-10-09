@@ -1,6 +1,6 @@
 # Ranking App Backend
 
-This repository contains the backend for a ranking application where users can create and manage lists, add items, and rank those items using a custom algorithm. The backend is built using Django and provides APIs for list and item management. The project uses a PostgreSQL database for data storage and supports OAuth-based authentication.
+This repository contains the backend for a ranking application where users can create and manage lists, add items, and rank those items using a custom algorithm. The backend is built using Django and provides APIs for list and item management. The project uses a PostgreSQL database for data storage and supports OAuth/OIDC-based authentication.
 
 ## Table of Contents
 

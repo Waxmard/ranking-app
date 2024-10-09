@@ -7,7 +7,7 @@ The Ranking App is a cross-platform application that allows users to create and 
 **Core Features**
 
 - **User Authentication**
-  - Secure OAuth login supporting multiple providers (e.g., Google, Facebook).
+  - Secure OAuth/OIDC login supporting multiple providers (e.g., Google, Facebook).
 - **List Creation and Management**
   - Create multiple lists with customizable types.
   - Edit, delete, and organize lists seamlessly.
@@ -30,7 +30,7 @@ The Ranking App is a cross-platform application that allows users to create and 
 **Database Schema Highlights**
 
 - **Users Table**
-  - Stores user credentials, OAuth information, and timestamps.
+  - Stores user credentials, OAuth/OIDC information, and timestamps.
 - **Lists Table**
   - Contains list details, associated user IDs, and privacy settings.
 - **Items Table**
